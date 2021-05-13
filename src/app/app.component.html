@@ -1,5 +1,5 @@
 <main>
-  <p-tabView>
+  <p-tabView (onChange)="atualizarGrafico()">
     <p-tabPanel header="Tarefas">
       <p-card header="Tarefas" subheader="Suas tarefas">
         <form #tarefaForm="ngForm" (ngSubmit)="adicionar(tarefaForm)">
@@ -16,6 +16,13 @@
           <p-card>
             <div class="conteudo-tarefa">
               <p>{{tarefa.descricao}}</p>
+              <div>
+                  <p-selectButton
+                  [options]="opcoes"
+                  optionLabel="rotulo"
+                  optionValue="valor"
+                  [(ngModel)]="tarefa.finalizada"></p-selectButton>
+              </div>
             </div>
           </p-card>
         </div>
@@ -24,7 +31,7 @@
 
     </p-tabPanel>
     <p-tabPanel header="Gráfico">
-
+      <p-chart type="doughnut" [data]="dados"></p-chart>
     </p-tabPanel>
   </p-tabView>
 </main>
