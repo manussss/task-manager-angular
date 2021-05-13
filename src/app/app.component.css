@@ -1,0 +1,9 @@
+span, input{
+  width: 100%;
+}
+
+.adicionar-botao{
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px 0;
+}
