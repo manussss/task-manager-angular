@@ -7,3 +7,12 @@ span, input{
   justify-content: flex-end;
   margin: 12px 0;
 }
+
+.tarefa{
+  margin-bottom: 4px;
+}
+
+.conteudo-tarefa{
+  font-size: 22px;
+  text-align: center;
+}

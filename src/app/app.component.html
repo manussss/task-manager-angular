@@ -2,15 +2,23 @@
   <p-tabView>
     <p-tabPanel header="Tarefas">
       <p-card header="Tarefas" subheader="Suas tarefas">
-        <form>
+        <form #tarefaForm="ngForm" (ngSubmit)="adicionar(tarefaForm)">
           <span class="p-float-label">
-            <input type="text" id="float-input" pInputText>
+            <input type="text" id="float-input" pInputText name="tarefa" ngModel>
             <label for="float-input">Qual a sua próxima tarefa?</label>
           </span>
           <div class="adicionar-botao">
             <button pButton label="Adicionar" type="submit" icon="pi pi-check"></button>
           </div>
         </form>
+
+        <div class="tarefa" *ngFor="let tarefa of tarefas">
+          <p-card>
+            <div class="conteudo-tarefa">
+              <p>{{tarefa.descricao}}</p>
+            </div>
+          </p-card>
+        </div>
 
       </p-card>
 
